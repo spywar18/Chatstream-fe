@@ -1,11 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
-
 function App() {
   const [messages, setMessages] = useState(["hi there", "hello"]);
   const wsRef = useRef();
   const inputRef = useRef();
-
   useEffect(() => {
     const ws = new WebSocket("http://localhost:8080");
     ws.onmessage = (event) => {
